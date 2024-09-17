@@ -1,9 +1,6 @@
 package org.example;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
@@ -36,6 +33,7 @@ public class Cliente implements Serializable {
     @Column(name = "dni", unique = true)
     private int dni;
 
+    @ToString.Exclude
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn (name = "fk_domicilio")
     private Domicilio domicilio;

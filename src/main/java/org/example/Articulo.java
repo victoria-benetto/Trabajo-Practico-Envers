@@ -38,6 +38,7 @@ public class Articulo implements Serializable {
 
 
     @OneToMany(mappedBy = "articulo")
+    @Builder.Default
     private List<DetalleFactura> detalleFacturas = new ArrayList<DetalleFactura>();
 
 
